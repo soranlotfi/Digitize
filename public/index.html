@@ -9,7 +9,7 @@
     </head>
     <body class="bg-gray-200">
         <!--app bar-->
-        <div class="flex justify-between items-center mt-11 px-4 mb-6">
+        <div class="flex md:hidden justify-between items-center mt-11 px-4 mb-6">
             <div>Digitize</div>
             <div class="text-lg font-bold text-slate-800">ساعت هوشمند</div>
             <div class="w-7 h-7 bg-white shadow-md flex justify-center items-center rounded-lg">
@@ -20,7 +20,7 @@
             </div>
         </div>
         <!--filter and sort mobile section-->
-        <div class="flex justify-between items-center px-4 gap-x-2">
+        <div class="flex md:hidden justify-between items-center px-4 gap-x-2 mb-9">
             <div class="flex items-center justify-start bg-white rounded-md py-2 pr-4 w-1/2">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 stroke-orange-600">
@@ -41,5 +41,54 @@
                 <span class="text-slate-800 text-sm mr-2 font-medium">فیلتر : اپل</span>
             </div>
         </div>
+        <!--mobile products section-->
+        <div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <!--product card-->
+            <div class="bg-white rounded-xl p-1.5 shadow-md">
+                <!--card image-->
+                <div class="bg-slate-200 rounded-xl p-2 mb-3">
+                    <img src="../assets/images/apple-watch-7.png" class="" alt="">
+                </div>
+                <!--card colors and options-->
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-200 text-sm md:text-base">اپل</span>
+                    <!--color groups section -->
+                    <div x-data="{color : 'red'}" class="flex items-center">
+                        <div @click="color='red'" :class="color==='red' ? 'ring-2 ring-red-500 ' : ''"    class="h-6 w-6  sm:w-8 sm:h-8 rounded-full cursor-pointer border-2  bg-red-500 ">
+                            <svg x-show="color==='red'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 sm:size-6 text-white">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div @click="color='blue'" :class="color==='blue' ? 'ring-2 ring-blue-500 ' : ''" class="h-6 w-6 sm:w-8 sm:h-8 rounded-full cursor-pointer border-2  bg-blue-500 -mr-1.5 ">
+                            <svg x-show="color==='blue'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 sm:size-6 text-white">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div @click="color='green'" :class="color==='green' ? 'ring-2 ring-green-500 ' : ''"  class="h-6 w-6 sm:w-8 sm:h-8  rounded-full cursor-pointer border-2  bg-green-500 -mr-1.5">
+                            <svg x-show="color==='green'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 text-white sm:size-6">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!--card-descriptions-->
+                <div class="text-center sm:text-start w-full mb-2">
+                   <p class="text-slate-800 font-medium text-xs sm:text-sm md:text-base">ساعت هوشمند اپل سری ۳</p>
+                </div>
+                <div class="text-center w-full mb-4 sm:text-end">
+                    <p class="text-orange-600 font-bold text-sm sm:text-sm md:text-base">۱۳,۴۵۶,۷۸۹ تومان</p>
+                </div>
+                <div class="w-full bg-slate-100 p-0.5 mb-2 h-0.5"></div>
+                    <button class="w-full text-orange-400 font-bold md:text-lg py-1">مشاهده و سفارش</button>
+                </div>
+            <div class="bg-blue-100">2</div>
+            <div class="bg-blue-100">3</div>
+            <div class="bg-blue-100">4</div>
+            <div class="bg-blue-100">5</div>
+            <div class="bg-blue-100">6</div>
+            <div class="bg-blue-100">7</div>
+            <div class="bg-blue-100">8</div>
+        </div>
+        <script src="//unpkg.com/alpinejs" defer></script>
     </body>
 </html>
