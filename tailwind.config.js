@@ -6,5 +6,9 @@ module.exports = {
         sans: ["vazir"],
       },
     },
-  }
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    // ...
+  ],
 };

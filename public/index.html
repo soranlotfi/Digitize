@@ -48,10 +48,10 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-12 md:gap-8 p-4">
+        <div class="grid grid-cols-12 md:gap-8 p-4 md:grid-rows-[55px-minmax(500px , _1fr)] items-start">
             <!--sidebar-->
-            <div class=" hidden md:block  col-span-3 lg:col-span-3 row-span-2">
-                <div class="bg-white rounded-xl w-full h-full pr-4 py-4">
+            <div class=" hidden md:block  col-span-3 xl:col-span-2 row-span-2">
+                <div class="bg-white rounded-xl w-full pr-4 py-4">
                     <!--category section-->
                     <div class="w-full p-6">
                         <div class="text-orange-400 font-bold text-2xl mb-4">دسته بندی</div>
@@ -90,12 +90,12 @@
                         </ul>
                     </div>
                     <!--filter section of side bar-->
-                    <div class="w-full p-6" x-data="{accName:'' , activeClass:'rotate-180'}">
+                    <div class="w-full p-6" >
                         <div class="text-orange-400 font-bold text-2xl mb-4">فیلتر</div>
                         <!--Acc No1-->
-                        <div class="w-full" >
+                        <div class="w-full mb-4" x-data="{accName:'' , activeClass:'rotate-180'}" >
                             <!--ACC No1 header icons and title-->
-                            <div class="flex items-center  text-slate-800 cursor-pointer mb-3">
+                            <div class="flex items-center  text-slate-800 cursor-pointer mb-3 transition-all duration-700" :class="accName==='brand' && 'bg-gray-200 p-2 rounded-xl'">
                                 <!--icon and title -->
                                 <span class="w-5 h-5  relative rounded-full bg-gray-100">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute w-4 h-5 right-1 top-1.5" fill="none"><path fill="currentColor" d="M12.83 13.27H1.17a.44.44 0 0 1-.44-.44c0-.24.2-.43.44-.43h11.66c.24 0 .44.2.44.43 0 .24-.2.44-.44.44Z"/><path fill="currentColor" d="M2.16 12.83h-.88l.03-7.01c0-.5.23-.96.62-1.26l4.08-3.18a1.61 1.61 0 0 1 1.98 0l4.08 3.17c.38.3.62.78.62 1.27v7.01h-.88v-7c0-.23-.1-.45-.28-.59L7.45 2.07a.74.74 0 0 0-.9 0L2.47 5.25a.73.73 0 0 0-.28.57l-.03 7.01Z"/><path fill="currentColor" d="M9.92 13.27H4.08a.44.44 0 0 1-.43-.44V7.3c0-.72.58-1.31 1.3-1.31h4.1c.71 0 1.3.59 1.3 1.31v5.54c0 .24-.2.44-.43.44Zm-5.4-.87h4.96V7.3c0-.25-.2-.45-.44-.45H4.96c-.24 0-.44.2-.44.44v5.1Z"/><path fill="#222F5D" d="M5.83 10.8a.44.44 0 0 1-.43-.45v-.87c0-.24.2-.44.43-.44.24 0 .44.2.44.44v.87c0 .24-.2.44-.44.44ZM7.88 4.81H6.13a.44.44 0 0 1-.44-.43c0-.24.2-.44.43-.44h1.75c.24 0 .44.2.44.44 0 .23-.2.43-.44.43Z"/></svg>
@@ -111,29 +111,105 @@
                             <!--ACC No1 checkboxes => content-->
                                 <div class="px-2 w-full" x-show="accName==='brand'" x-transition>
                                     <label for="apple" class=" py-1 flex items-center cursor-pointer">
-                                        <input type="checkbox" name="brand" id="apple">
+                                        <input type="checkbox" name="brand" id="apple"  class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
                                         <span class="mr-3">اپل</span>
                                     </label>
                                     <label for="xiaomi" class=" py-1 flex items-center cursor-pointer">
-                                        <input type="checkbox" name="brand" id="xiaomi">
+                                        <input type="checkbox" name="brand" id="xiaomi" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
                                         <span class="mr-3">شیائومی</span>
                                     </label>
                                     <label for="samsung" class="py-1 flex items-center cursor-pointer">
-                                        <input type="checkbox" name="brand" id="samsung">
+                                        <input type="checkbox" name="brand" id="samsung" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
                                         <span class="mr-3">سامسونگ</span>
                                     </label>
                                     <label for="hwawai" class="py-1 flex items-center cursor-pointer">
-                                        <input type="checkbox" name="brand" id="hwawai">
+                                        <input type="checkbox" name="brand" id="hwawai" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
                                         <span class="mr-3">هواوی</span>
                                     </label>
                                 </div>
                         </div>
                         <!--Acc No.2-->
+                        <div class="w-full mb-4" x-data="{accName:'' , activeClass:'rotate-180'}">
+                            <!--ACC No2 header icons and title-->
+                            <div class="flex items-center  text-slate-800 cursor-pointer mb-3 transition-all duration-700" :class="accName==='color' && 'bg-gray-200 p-2 rounded-xl'">
+                                <!--icon and title -->
+                                <span class="w-5 h-5  relative rounded-full bg-gray-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute w-4 h-5 right-1 top-1.5" fill="none"><path fill="currentColor" d="M12.83 13.27H1.17a.44.44 0 0 1-.44-.44c0-.24.2-.43.44-.43h11.66c.24 0 .44.2.44.43 0 .24-.2.44-.44.44Z"/><path fill="currentColor" d="M2.16 12.83h-.88l.03-7.01c0-.5.23-.96.62-1.26l4.08-3.18a1.61 1.61 0 0 1 1.98 0l4.08 3.17c.38.3.62.78.62 1.27v7.01h-.88v-7c0-.23-.1-.45-.28-.59L7.45 2.07a.74.74 0 0 0-.9 0L2.47 5.25a.73.73 0 0 0-.28.57l-.03 7.01Z"/><path fill="currentColor" d="M9.92 13.27H4.08a.44.44 0 0 1-.43-.44V7.3c0-.72.58-1.31 1.3-1.31h4.1c.71 0 1.3.59 1.3 1.31v5.54c0 .24-.2.44-.43.44Zm-5.4-.87h4.96V7.3c0-.25-.2-.45-.44-.45H4.96c-.24 0-.44.2-.44.44v5.1Z"/><path fill="#222F5D" d="M5.83 10.8a.44.44 0 0 1-.43-.45v-.87c0-.24.2-.44.43-.44.24 0 .44.2.44.44v.87c0 .24-.2.44-.44.44ZM7.88 4.81H6.13a.44.44 0 0 1-.44-.43c0-.24.2-.44.43-.44h1.75c.24 0 .44.2.44.44 0 .23-.2.43-.44.43Z"/></svg>
+                                </span>
+                                <div class="flex justify-between items-center px-2 text-lg w-full"  @click="accName = accName === 'color' ? '' : 'color'">
+                                    <span >رنگ محصول</span>
+                                    <span :class="accName==='color' ? activeClass : ''" class="transition duration-1000">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <!--ACC No1 checkboxes => content-->
+                            <div class="px-2 w-full" x-show="accName==='color'" x-transition>
+                                <label for="red" class=" py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="red"  class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">قرمز</span>
+                                </label>
+                                <label for="blue" class=" py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="blue" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">آبی</span>
+                                </label>
+                                <label for="yellow" class="py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="yellow" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">زرد</span>
+                                </label>
+                                <label for="green" class="py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="green" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">سبز</span>
+                                </label>
+                                <label for="purple" class="py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="purple" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">بنفش</span>
+                                </label>
+                                <label for="pink" class="py-1 flex items-center cursor-pointer">
+                                    <input type="checkbox" name="brand" id="pink" class="form-checkbox rounded text-orange-500 focus:ring-orange-500" >
+                                    <span class="mr-3">صورتی</span>
+                                </label>
+
+                            </div>
+                        </div>
+                        <!--ACC No.3-->
+                        <div class="w-full mb-4" x-data="{accName:'priceRange' , activeClass:'rotate-180'}" >
+                            <!--ACC No1 header icons and title-->
+                            <div class="flex items-center  text-slate-800 cursor-pointer mb-3 transition-all duration-700" :class="accName==='priceRange' && 'bg-gray-200 p-2 rounded-xl'">
+                                <!--icon and title -->
+                                <span class="w-5 h-5  relative rounded-full bg-gray-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute w-4 h-5 right-1 top-1.5" fill="none"><path fill="currentColor" d="M12.83 13.27H1.17a.44.44 0 0 1-.44-.44c0-.24.2-.43.44-.43h11.66c.24 0 .44.2.44.43 0 .24-.2.44-.44.44Z"/><path fill="currentColor" d="M2.16 12.83h-.88l.03-7.01c0-.5.23-.96.62-1.26l4.08-3.18a1.61 1.61 0 0 1 1.98 0l4.08 3.17c.38.3.62.78.62 1.27v7.01h-.88v-7c0-.23-.1-.45-.28-.59L7.45 2.07a.74.74 0 0 0-.9 0L2.47 5.25a.73.73 0 0 0-.28.57l-.03 7.01Z"/><path fill="currentColor" d="M9.92 13.27H4.08a.44.44 0 0 1-.43-.44V7.3c0-.72.58-1.31 1.3-1.31h4.1c.71 0 1.3.59 1.3 1.31v5.54c0 .24-.2.44-.43.44Zm-5.4-.87h4.96V7.3c0-.25-.2-.45-.44-.45H4.96c-.24 0-.44.2-.44.44v5.1Z"/><path fill="#222F5D" d="M5.83 10.8a.44.44 0 0 1-.43-.45v-.87c0-.24.2-.44.43-.44.24 0 .44.2.44.44v.87c0 .24-.2.44-.44.44ZM7.88 4.81H6.13a.44.44 0 0 1-.44-.43c0-.24.2-.44.43-.44h1.75c.24 0 .44.2.44.44 0 .23-.2.43-.44.43Z"/></svg>
+                                </span>
+                                <div class="flex justify-between items-center px-2 text-lg w-full"  @click="accName = accName === 'priceRange' ? '' : 'priceRange'">
+                                    <span >محدوده قیمت</span>
+                                    <span :class="accName==='brand' ? activeClass : ''" class="transition duration-1000">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <!--ACC No1 checkboxes => content-->
+                            <div class="px-2 py-4 w-full" x-show="accName==='priceRange'" x-transition x-data="{price : ''}">
+                                <input dir="ltr" id="range" type="range" min="10900000" max="50900000" value="0" class="w-full h-0.5 bg-orange-600 rounded-lg appearance-none cursor-pointer text-orange-500 custom-slider-thumb" x-model="price">
+                                <div class="w-full py-6 justify-center items-center grid grid-cols-2">
+                                    <div class="text-start ">
+                                        ۵۰,۹۰۰,۰۰۰
+                                    </div>
+                                    <div class="text-end text-sm">
+                                        ۱۰,۹۰۰,۰۰۰
+                                    </div>
+                                    <div  class="col-span-12 text-center py-4 bg-orange-600 rounded-xl mt-6" :class="!price && 'hidden'">
+                                        <span class="text-white" x-text="price && `${price} تومان `">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <!--sort section-->
-            <div class=" hidden md:block col-span-9">
+            <div class=" hidden md:block md:col-span-9 xl:col-span-10">
                 <div class="bg-white px-4 flex items-center rounded-xl gap-x-6 text-gray-400 text-lg"
                      x-data="{sort : 1 , activeClass:'text-slate-800 font-bold'}">
                     <div>
@@ -169,7 +245,7 @@
                 </div>
             </div>
             <!--products-section-->
-            <div class="col-span-12 md:col-span-9 lg:col-span-9 rounded-xl ">
+            <div class="col-span-12 md:col-span-9 xl:col-span-10 rounded-xl ">
                 <!-- products section-->
                 <div x-data="{
     products: [
@@ -177,9 +253,10 @@
         { id: 2, brand: 'اپل', name: '۱۳ گوشی آیفون ', price: '۱۳,۴۵۶,۷۸۹ تومان', image: '../assets/images/iphone-13.png' },
         { id: 3, brand: 'سونی', name: 'ساعت هوشمند سونی', price: '۱۳,۴۵۶,۷۸۹ تومان', image: 'https://example.com/ps5.jpg' },
         { id: 4, brand: 'دل', name: 'لپ‌تاپ XPS 13', price: '۱۳,۴۵۶,۷۸۹ تومان', image: 'https://example.com/xps13.jpg' },
-        { id: 5, brand: 'نایک', name: 'کفش ورزشی ایر مکس', price: '۱۳,۴۵۶,۷۸۹ تومان', image: 'https://example.com/airmax.jpg' }
+        { id: 5, brand: 'نایک', name: 'کفش ورزشی ایر مکس', price: '۱۳,۴۵۶,۷۸۹ تومان', image: 'https://example.com/airmax.jpg' },
+        { id: 6, brand: 'نایک', name: 'کفش ورزشی ایر مکس', price: '۱۳,۴۵۶,۷۸۹ تومان', image: 'https://example.com/airmax.jpg' },
     ]}"
-                     class="grid justify-between gap-x-3 gap-y-6 lg::gap-x-8 min-[420px]:grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 py-4">
+                     class=" h-full grid justify-between items-start gap-x-3 gap-y-6 lg:gap-x-5 min-[420px]:grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 py-4">
                     <!--product card-->
                     <template x-for="product in products" :key="product.id">
                         <div class="bg-white rounded-xl p-2 shadow-xl">
