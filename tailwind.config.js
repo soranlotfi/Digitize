@@ -1,6 +1,9 @@
 module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
         sans: ["vazir"],
@@ -8,7 +11,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/forms"),
     // ...
   ],
 };
